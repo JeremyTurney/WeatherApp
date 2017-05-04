@@ -105,7 +105,14 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         dateLbl.text = weather.date
         currentTempLbl.text = "\(weather.currentTemperature)º"
         locationLbl.text = weather.cityCountryName
-        CurrentWeatherConditionLbl.text = weather.weatherType
+        if weather.weatherType == "Clouds"
+        {
+            CurrentWeatherConditionLbl.text = "Cloudy"
+        }
+        else
+        {
+            CurrentWeatherConditionLbl.text = weather.weatherType
+        }
         weatherImg.image = UIImage(named: weather.weatherType)
         
     }

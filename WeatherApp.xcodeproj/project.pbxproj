@@ -108,6 +108,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F766460E1EBACB4F000A5EB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F78CDE371DB5AF6F009F4462 /* CurrentWeather.swift */,
+				F78CDE351DB5AC09009F4462 /* Constants.swift */,
+				F797AB551DB694C900807F97 /* Forcast.swift */,
+				F797AB591DB7E14A00807F97 /* Location.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F766460F1EBACB59000A5EB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F76646101EBACB60000A5EB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F797AB571DB6DD7900807F97 /* WeatherCell.swift */,
+				F7E4518B1DB19E3A00C4C9AC /* WeatherVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		F7E4517D1DB19E3A00C4C9AC = {
 			isa = PBXGroup;
 			children = (
@@ -133,18 +160,15 @@
 		F7E451881DB19E3A00C4C9AC /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				F76646101EBACB60000A5EB7 /* Controller */,
+				F766460F1EBACB59000A5EB7 /* View */,
+				F766460E1EBACB4F000A5EB7 /* Model */,
 				F7E451891DB19E3A00C4C9AC /* AppDelegate.swift */,
-				F7E4518B1DB19E3A00C4C9AC /* WeatherVC.swift */,
 				F7E4518D1DB19E3A00C4C9AC /* Main.storyboard */,
 				F7E451931DB19E3A00C4C9AC /* Assets.xcassets */,
 				F7E451951DB19E3A00C4C9AC /* LaunchScreen.storyboard */,
 				F7E451981DB19E3A00C4C9AC /* Info.plist */,
 				F7E451901DB19E3A00C4C9AC /* WeatherApp.xcdatamodeld */,
-				F78CDE351DB5AC09009F4462 /* Constants.swift */,
-				F78CDE371DB5AF6F009F4462 /* CurrentWeather.swift */,
-				F797AB551DB694C900807F97 /* Forcast.swift */,
-				F797AB571DB6DD7900807F97 /* WeatherCell.swift */,
-				F797AB591DB7E14A00807F97 /* Location.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -174,12 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7E451B11DB19E3A00C4C9AC /* Build configuration list for PBXNativeTarget "WeatherApp" */;
 			buildPhases = (
-				55251C5D1A075CE845E39005 /* 📦 Check Pods Manifest.lock */,
+				55251C5D1A075CE845E39005 /* [CP] Check Pods Manifest.lock */,
 				F7E451821DB19E3A00C4C9AC /* Sources */,
 				F7E451831DB19E3A00C4C9AC /* Frameworks */,
 				F7E451841DB19E3A00C4C9AC /* Resources */,
-				973C0201AC9A2ECD2D09E393 /* 📦 Embed Pods Frameworks */,
-				6138831933F1C2B674C5A91A /* 📦 Copy Pods Resources */,
+				973C0201AC9A2ECD2D09E393 /* [CP] Embed Pods Frameworks */,
+				6138831933F1C2B674C5A91A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,29 +328,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		55251C5D1A075CE845E39005 /* 📦 Check Pods Manifest.lock */ = {
+		55251C5D1A075CE845E39005 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6138831933F1C2B674C5A91A /* 📦 Copy Pods Resources */ = {
+		6138831933F1C2B674C5A91A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,14 +358,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		973C0201AC9A2ECD2D09E393 /* 📦 Embed Pods Frameworks */ = {
+		973C0201AC9A2ECD2D09E393 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
